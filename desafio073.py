@@ -1,0 +1,7 @@
+times = ("Flamengo", "Palmeiras", "Cruzeiro", "Mirassol", "Fluminense", "Botafogo", "Bahia", "São Paulo", "Grêmio", "Red Bull Bragantino", "Atlético-MG", "Santos", "Corinthians", "Vasco", "Vitória", "Internacional", "Ceará", "Fortaleza", "Juventude", "Sport")
+print(f"Lista de times do Brasileirão: {times}")
+print(f"\n5 primeiros colocados: {times[:5]}")
+print(f"\nÚltimos 4 colocados: {times[-4:]}")
+print(f"\nTimes em ordem alfabética: {sorted(times)}")
+#Em que posição está o Chapecoense (não tem, então usarei o Mirassol)
+print(f"\nPosição do Mirassol: {times.index("Mirassol") + 1}º lugar.")
