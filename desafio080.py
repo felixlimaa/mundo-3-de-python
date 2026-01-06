@@ -1,15 +1,17 @@
 numeros = []
 for i in range(0, 5):
-    numeros.append(int(input("Digite um número: "))) #Digita 5 números
-    if len(numeros) == 1:
-        numeros.append(int(input("Digite um número: ")))
-    elif len(numeros) >= 2:
-        a = numeros[i]
-        b = numeros[i-1]
+    numeros.append(int(input("Digite um número: "))) #5
+    if len(numeros) >= 2: #12
+        b = numeros[i] #12
+        a = numeros[i-1] #5
         if a > b:
-            numeros.append(a)
+            numeros.remove(a)
+            numeros.insert(b, a)
         elif b > a:
             numeros.remove(b)
-            numeros.insert(b, a)
-        del(a,b)
-    print(numeros)
+            numeros.insert(a, b)
+        del(b, a)
+        if len(numeros) >= 3:
+            for j in numeros:
+                if j[i] < j[i]
+    print(numeros) #[12, 12, 12, 12, 90, 12]
