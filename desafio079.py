@@ -7,7 +7,7 @@ while True:
         append.valores(str(input("Valor inválido! Digite um número: ").strip()[i])
     valores[i] = int(valores[i])
     while valores[i] in valores[i]: #nao repete  valor inserido dentro da lista 
-        del(valores[i])
+        pop(valores[i])
     
     c = str(input("Você quer adicionar mais algum número? [S/N]: ")).strip().upper()[0]
     while c not in "NS":
