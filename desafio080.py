@@ -5,7 +5,7 @@ for i in range(0,5):
         #Se o número digitado é maior que o digitado anteriormente
     print(f"Números digitados: {numeros}")
     if len(numeros) > 1 and numeros[i] > numeros[i-1]: #Se a lista contém mais de um número e o número atual é maior do que o número anterior
-    print("Sim")
+        print("Sim")
     
     """if len(numeros) != 0: #Se a lista números não estiver vazia
         a = max(numeros) #Encontre o maior número
