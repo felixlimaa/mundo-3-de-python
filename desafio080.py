@@ -7,5 +7,7 @@ for i in range(0,5):
         temp = n[p]
         n[p] = n[p-1]
         n[p-1] = temp
+        print(f"{n[p]} adicionado na posição {p}.")
+        print(f"{n[p-1]} adicionado na posição {p-1}.")
         p = p -1
-    print(n)
+    print(f"Números em ordem crescente: {n}")
