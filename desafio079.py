@@ -1,20 +1,16 @@
 valores = ordem = []
-i = 0
 c = ""
 while True:
-    valores.append(str(input("Digite um número: ").strip()))
-    while not valores[i].isnumeric:
-        valores.append(str(input("Valor inválido! Digite um número: ").strip()))
-    if valores[i] in valores[:i]: #nao repete  valor inserido dentro da lista 
-        valores.pop(i)
-        print("Número já está na lista, não vou adicionar...")
-    valores[i] = int(valores[i])
+    valores.append(int(input("Digite um número: ")))
+    for i, v in enumerate(valores): #nao repete  valor inserido dentro da lista
+        if v in valores and valores.count(v) > 1:
+            print("Número já está na lista, não vou adicionar...")
+            valores.pop(i)
     c = str(input("Você quer adicionar mais algum número? [S/N]: ")).strip().upper()[0]
     while c not in "NS":
         c = str(input("Você quer adicionar mais algum número? [S/N]: ")).strip().upper()[0]
     if "N" in c:
         break
-    i += 1
 print(f"Você digitou os números: ", end=" ")
 for v in valores:
     print(v, end=" ")
