@@ -19,7 +19,7 @@ for i in range(0,q): #Números
         #print("t[i][j]: ",t[i][j])
         #print("t[i][j::-1]: ",t[i][j::-1]) #Cada número
         while p > 0:
-            while t[i][p] < t[i][p-1]: #Se tamanho da lista maior que zero na contagem e numero atual igual ao um numero anterior
+            while t[i][p] < t[i][p-1] or t[i][len(t[i])-1] < t[i][len(t)-2]: #Se tamanho da lista maior que zero na contagem e numero atual igual ao um numero anterior
                 print(t[i], end=" ")
                 print(f"{t[i][p]} é menor que {t[i][p-1]}. Reordenando...")
                 sleep(2)
