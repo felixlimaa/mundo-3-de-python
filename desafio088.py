@@ -90,10 +90,6 @@ for i in range(0,q): #Números
                             v = v - 1
             r = r - 1
         p = p - 1
-<<<<<<< HEAD
-        print(f"t[{i}]: {t[i]}")
-        #sleep(2)
-=======
         print("================")
         print(f"t[i]: {t[i]}")
         print("================")
@@ -130,7 +126,6 @@ for i in range(0,len(t)):
 #print(f"t: {t}")
 for i in range(0,len(t)):
     t[i].sort() #Ainda tem bugs de numeros fora de ordem. Usando para facilitar.
->>>>>>> e4e7556b1c79d598625bfadbd54c24e9a0dfbebd
     n.append(t[i])
 #print(t)
 print("n :", n)
