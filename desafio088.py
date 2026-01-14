@@ -27,26 +27,71 @@ for i in range(0,q): #Números
             limbo = t[i][t[i].index(max(t[i]))]
             t[i][t[i].index(max(t[i]))] = t[i][r+1]
             t[i][r+1] = limbo
+            if len(t[i]) == 6:
+                print("Limite atingido")
+                #sleep(2)
+                for k in range(1,len(t[i])):
+                    v = len(t[i])-2
+                    while v > 0:
+                        while t[i][v] == t[i][v-1]:
+                            print(f"Sim, {t[i][v]} é igual a {t[i][v-1]}. Substituindo...")
+                            temp = t[i][v]
+                            t[i][v] = randint(1,60)
+                        v = v - 1
+            while r > 0 and t[i][t[i].index(min(t[i]))] != t[i][0]:
+                print(f"{t[i]} {t[i][r]} é o menor número. Descendo posição até a primeira.")
+                limbo = t[i][t[i].index(min(t[i]))]
+                t[i][t[i].index(min(t[i]))] = t[i][r-1]
+                t[i][r-1] = limbo
+                if len(t[i]) == 6:
+                    print("Limite atingido")
+                    #sleep(2)
+                    for k in range(1,len(t[i])):
+                        v = len(t[i])-2
+                        while v > 0:
+                            while t[i][v] == t[i][v-1]:
+                                print(f"Sim, {t[i][v]} é igual a {t[i][v-1]}. Substituindo...")
+                                temp = t[i][v]
+                                t[i][v] = randint(1,60)
+                            v = v - 1
+                r = r - 1
         while r > 0 and t[i][t[i].index(min(t[i]))] != t[i][0]:
             print(f"{t[i]} {t[i][r]} é o menor número. Descendo posição até a primeira.")
             limbo = t[i][t[i].index(min(t[i]))]
             t[i][t[i].index(min(t[i]))] = t[i][r-1]
             t[i][r-1] = limbo
+            if len(t[i]) == 6:
+                print("Limite atingido")
+                #sleep(2)
+                for k in range(1,len(t[i])):
+                    v = len(t[i])-2
+                    while v > 0:
+                        while t[i][v] == t[i][v-1]:
+                            print(f"Sim, {t[i][v]} é igual a {t[i][v-1]}. Substituindo...")
+                            temp = t[i][v]
+                            t[i][v] = randint(1,60)
+                        v = v - 1
+            while t[i][t[i].index(max(t[i]))] != t[i][len(t[i])-1]: #numero atual maior que numero anterior
+                print(f"{t[i]} {t[i][r]} é o maior número. Subindo posição até a última...")
+                #sleep(2)
+                limbo = t[i][t[i].index(max(t[i]))]
+                t[i][t[i].index(max(t[i]))] = t[i][r+1]
+                t[i][r+1] = limbo
+                if len(t[i]) == 6:
+                    print("Limite atingido")
+                    ##sleep(2)
+                    for k in range(1,len(t[i])):
+                        v = len(t[i])-2
+                        while v > 0:
+                            while t[i][v] == t[i][v-1]:
+                                print(f"Sim, {t[i][v]} é igual a {t[i][v-1]}. Substituindo...")
+                                temp = t[i][v]
+                                t[i][v] = randint(1,60)
+                            v = v - 1
             r = r - 1
         p = p - 1
-        print("================")
-        print(f"t[i]: {t[i]}")
-        print("================")
-        for k in range(1,len(t[i])-1):
-            print("Reorganizando números internos...")
-            s = len(t[i]) - 2
-            while s > 0:
-                while t[i][s] < t[i][s-1]:
-                    temp = t[i][s]
-                    t[i][s] = t[i][s-1]
-                    t[i][s-1] = temp
-                    print(n," Lista atualizada!")
-                s = s - 1
+        print(f"t[{i}]: {t[i]}")
+        #sleep(2)
     n.append(t[i])
 t.clear()
 print(t)
