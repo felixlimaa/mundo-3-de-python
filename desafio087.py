@@ -8,7 +8,7 @@ for i in range(0,3):
             temp.clear()
 for i in range(0,3):
     for j in range(0,3):
-        print(f"[ {n[i][j]} ]", end=" ")
+        print(f"[ {n[i][j]:^5} ]", end=" ")
         if j == 2:
             print()
 pares = [j for p in n for j in p if j%2 == 0]
