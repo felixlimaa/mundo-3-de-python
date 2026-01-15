@@ -32,7 +32,6 @@ for k, v in pessoas.items():
 del pessoas['sexo']
 for k, v in pessoas.items():
     print(f"{k} = {v}")
-    
     #nome = Gustavo
     #idade = 22
 """
