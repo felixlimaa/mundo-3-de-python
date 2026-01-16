@@ -1,3 +1,4 @@
+from time import sleep
 from random import randint
 player = {}
 jogo = []
@@ -8,6 +9,7 @@ for i in range(1,5):
     #print(jogo) #[{'Jogador': 'Jogador 1', 'Dado': 6}, {'Jogador': 'Jogador 2', 'Dado': 4}, {'Jogador': 'Jogador 3', 'Dado': 5}, {'Jogador': 'Jogador 4', 'Dado': 5}]
 print("Valores sorteados:")
 for j in jogo:
+    sleep(2)
     print(f"O ", end="")
     for v in j.values():
         if isinstance(v,str):
@@ -16,8 +18,8 @@ for j in jogo:
             print("tirou", end=" ")
             print(f'{v}.', end=" ")
     print()
-print("Ranking dos jogadores:")
-#jogo = [{'Jogador': 'Jogador 1', 'Dado': 2}, {'Jogador': 'Jogador 2', 'Dado': 3}, {'Jogador': 'Jogador 3', 'Dado': 6}, {'Jogador': 'Jogador 4', 'Dado': 2}]
+sleep(2)
+print("Ranking dos jogadores:")
 rank = {}
 p = q = len(jogo)-1
 while p > 0:
@@ -37,6 +39,7 @@ while p > 0:
     p = p - 1
 jogo = jogo[::-1]
 for i in range(len(jogo)):
+    sleep(2)
     print(f"{i+1}° lugar: ", end="")
     for v in jogo[i].values():
         if isinstance(v, str):
