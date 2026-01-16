@@ -1,7 +1,6 @@
 from random import randint
-"""player = {}
+player = {}
 jogo = []
-temp = []
 for i in range(1,5):
     player['Jogador'] = f"Jogador {i}"
     player['Dado'] = randint(1,6)
@@ -17,27 +16,30 @@ for j in jogo:
             print("tirou", end=" ")
             print(f'{v}.', end=" ")
     print()
-print("Ranking dos jogadores:")
-rank = []
-for i in range(0,len(jogo)):
-    p = len(jogo)-1
-    dado = [j['Dado'] for j in jogo]
-print(jogo)"""
-jogo = [{'Jogador': 'Jogador 1', 'Dado': 2}, {'Jogador': 'Jogador 2', 'Dado': 3}, {'Jogador': 'Jogador 3', 'Dado': 6}, {'Jogador': 'Jogador 4', 'Dado': 2}]
-rank = []
-dado = [j['Dado'] for j in jogo]
-print(dado) #[2, 3, 6, 2]
-print(min(dado))
-#Método Copy
-p = len(jogo)-1
-while p > -1:
-    print(min)
-    if jogo[p]['Dado'] == min(dado):
-        rank.append(jogo[p].copy())
-        print(f"jogo: {len(jogo)}",jogo)
-        print(f"rank: {len(rank)}",rank)
-        del jogo[p]
-        p = p - 1
-        print("p: ",p)
-print(f"jogo: {len(jogo)}",jogo)
-print(f"rank: {len(rank)}",rank)
+print("Ranking dos jogadores:")
+#jogo = [{'Jogador': 'Jogador 1', 'Dado': 2}, {'Jogador': 'Jogador 2', 'Dado': 3}, {'Jogador': 'Jogador 3', 'Dado': 6}, {'Jogador': 'Jogador 4', 'Dado': 2}]
+rank = {}
+p = q = len(jogo)-1
+while p > 0:
+    while jogo[p]['Dado'] < jogo[p-1]['Dado']: #posicoes internas
+        rank['temp'] = jogo[p]
+        jogo[p] = jogo[p-1]
+        jogo[p-1] = rank['temp']
+        del rank['temp']
+    while jogo[0]["Dado"] > jogo[p]["Dado"]: #primeira posicao e posicoes internas
+        rank['temp'] = jogo[0]
+        jogo[0] = jogo[p]
+        jogo[p] = rank['temp']
+    while jogo[len(jogo)-1]["Dado"] < jogo[p]["Dado"]: #ultima posicao e posicoes internas
+        rank['temp'] = jogo[len(jogo)-1]
+        jogo[len(jogo)-1] = jogo[p]
+        jogo[p] = rank['temp']
+    p = p - 1
+jogo = jogo[::-1]
+for i in range(len(jogo)):
+    print(f"{i+1}° lugar: ", end="")
+    for v in jogo[i].values():
+        if isinstance(v, str):
+            print(v, end=" ")
+        if isinstance(v, (float, int)):
+            print(f"com {v}.")
