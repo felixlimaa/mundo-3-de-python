@@ -2,7 +2,7 @@ jogador = {}
 time = []
 continuar = ""
 escolha = 0
-"""while True:
+while True:
     jogador['nome'] = str(input("Digite o nome do jogador: ")).strip().capitalize()
     jogador['partidas'] = int(input(f'Quantas partidas {jogador["nome"]} jogou? '))
     jogador['gols'] = []
@@ -22,9 +22,7 @@ escolha = 0
         break
 print(time) #[{'nome': 'Kalel', 'gols': [1, 3], 'total': 4}, {'nome': 'Maico', 'gols': [1, 0, 3, 2, 0, 1], 'total': 7}, {'nome': 'Gabriel', 'gols': [1, 0, 2], 'total': 3}]
 print("-="*25)
-"""
-
-time = [{'nome': 'Kalel', 'gols': [1, 3], 'total': 4}, {'nome': 'Maico', 'gols': [1, 0, 3], 'total': 7}, {'nome': 'Gabriel', 'gols': [1, 0, 2], 'total': 3}]
+#time = [{'nome': 'Kalel', 'gols': [1, 3], 'total': 4}, {'nome': 'Maico', 'gols': [1, 0, 3], 'total': 7}, {'nome': 'Gabriel', 'gols': [1, 0, 2], 'total': 3}]
 #print(time)
 print('cod', end=" ")
 for k in time[escolha].keys():
@@ -40,16 +38,19 @@ for c in range(0,len(time)):
             print(f"{v}", end="")
             print(f"{'':^5}", end="")
     print()
-#escolha = int(input("Mostrar dados de qual jogador? "))
-#print(time[escolha].values())
-
-"""
-    print("-="*25)
-    for d, v in jogador.items():
-        print(f"O campo {d} tem o valor {v}.")
-    print("-="*25)
-    print(f"O jogador {jogador['nome']} jogou {len(jogador["gols"])} partidas.")
-    for i in range(0,len(jogador['gols'])):
-        print(f"  ==> Na partida {i}, fez {jogador["gols"][i]} gols.")
-    print(f"Foi um total de {jogador["total"]} gols.")
-"""
+while escolha != 999 and escolha <= len(time)-1:
+    print("--"*25)
+    escolha = int(input("Mostrar dados de qual jogador? (999 para parar): "))
+    while escolha > len(time)-1 and escolha < 999:
+        print(f"ERRO: Não existe jogador com código {escolha}. Tente de novo!")
+        escolha = int(input("Mostrar dados de qual jogador? (999 para parar): "))
+    if escolha == 999:
+        break
+    print(f"— LEVANTAMENTO DO JOGADOR ", end="")
+    for v in time[escolha].values():
+        if isinstance(v,str):
+            print(v)
+        if isinstance(v,list):
+            for c in range(len(v)):
+                print(f"No jogo {c}, fez {v[c]} gols.")
+print("<< VOLTE SEMPRE >>")
